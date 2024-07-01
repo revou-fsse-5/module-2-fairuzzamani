@@ -239,9 +239,6 @@ mark {
     100% { opacity: 0; }
 }
 
-/* Media Queries for Responsiveness */
-
-/* Tablet */
 @media (max-width: 768px) {
     .container-content {
         grid-template-columns: repeat(8, 1fr);
@@ -257,7 +254,6 @@ mark {
     }
 }
 
-/* Mobile */
 @media (max-width: 480px) {
     .container-content {
         grid-template-columns: repeat(4, 1fr);
