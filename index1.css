@@ -5,7 +5,7 @@
     padding: 0;
     margin: 0;
     line-height: 1.5em;
-    font-family: 'karla', sans-serif;
+    font-family: 'Karla', sans-serif;
     text-decoration: none;
     text-transform: capitalize;
     transition: .2s linear;
@@ -94,6 +94,8 @@ header {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .navbar li {
@@ -127,30 +129,29 @@ header {
 }
 
 .container-content {
-    width: 100%;
-    margin: 0 auto;
-    overflow: hidden;
-    height: 100%; 
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    padding: 20px;
 }
+
 .text-container {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
+    grid-column: span 8;
+    background: #252422;
+    color: white;
     padding: 20px;
     box-sizing: border-box;
-    background: #252422;
 }
 
 .image-cp1 {
-    float: right;
-    width: 50%;
+    grid-column: span 4;
     padding: 20px;
     box-sizing: border-box;
     text-align: right;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .image-cp1 img {
@@ -159,10 +160,65 @@ header {
     display: block;
 }
 
-.text-container .fade-in-text {
+.grid-1 {
+    grid-column: span 5;
+    background: #f4a261;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.grid-1 h2 {
+    font-size: 17px;
+    text-align: center;
+    color: #252422;
+}
+
+.grid-2 {
+    grid-column: span 7;
+    background: #e76f51;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.grid-3 {
+    grid-column: span 4;
+    background: #2a9d8f;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.grid-4 {
+    grid-column: span 8;
+    background: #264653;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.fade-in-text {
     color: #eb5e28;
     animation: fadeIn 5s;
     font-size: 1em;
+}
+
+mark {
+    -webkit-animation: 1.5s highlight 1.5s 1 normal forwards;
+    animation: 1.5s highlight 1.5s 1 normal forwards;
+    background-color: none;
+    background: linear-gradient(90deg, #252422 50%, #f4a261 50%);
+    color: #fefefe;
+    background-size: 200% 100%;
+    background-position: 100% 0;
+}
+
+.fade-in-fade-out {
+    animation: fade-inout 4s infinite alternate;
+    font-size: 3em;
 }
 
 @keyframes fadeIn {
@@ -170,37 +226,64 @@ header {
     100% { opacity: 1; }
 }
 
-@media screen and (max-width: 768px) {
-    .text-container,
+@-webkit-keyframes highlight {
+    to {background-position: 0 0;}
+}
+
+@keyframes highlight {
+    to {background-position: 0 0;}
+}
+
+@keyframes fade-inout {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablet */
+@media (max-width: 768px) {
+    .container-content {
+        grid-template-columns: repeat(8, 1fr);
+    }
+    .text-container {
+        grid-column: span 8;
+    }
     .image-cp1 {
-        width: 100%;
-        padding: 10px;
+        grid-column: span 8;
     }
-    .txt-mrkt {
-        font-size: 36px;
-    }
-    .book {
-        font-size: 1.5rem;
-    }
-    .navbar a {
-        padding: 10px;
-    }
-    .container {
-        padding: 10px 0;
+    .grid-1, .grid-2, .grid-3, .grid-4 {
+        grid-column: span 8;
     }
 }
 
-@media screen and (max-width: 480px) {
+/* Mobile */
+@media (max-width: 480px) {
+    .container-content {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .text-container {
+        grid-column: span 4;
+    }
+    .image-cp1 {
+        grid-column: span 4;
+    }
+    .grid-1, .grid-2, .grid-3, .grid-4 {
+        grid-column: span 4;
+    }
     .txt-mrkt {
         font-size: 24px;
     }
     .book {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
-    .navbar a {
-        padding: 8px;
+    .navbar {
+        height: auto;
     }
-    .text-container {
-        font-size: 14px;
+    .navbar ul {
+        flex-direction: column;
+    }
+    .navbar li {
+        width: 100%;
     }
 }
