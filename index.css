@@ -32,7 +32,7 @@ header {
     z-index: 1; 
 }
 
-.text-market {
+.text-rift {
     width: 100%;
     height: 100%;
     position: relative;
@@ -45,7 +45,7 @@ header {
     z-index: 2;
 }
 
-.txt-market {
+.txt-rift {
     position: relative;
     text-align: center;
     letter-spacing: 3px;
@@ -62,7 +62,7 @@ header {
     font-family: 'Exo', sans-serif;
 }
 
-.txt-mrkt {
+.rift {
     font-size: 48px;
     margin-bottom: 1px;
     text-shadow: 4px 4px 6px rgba(13,21,32,1);
@@ -138,7 +138,7 @@ header {
 
 .text-container {
     grid-column: span 8;
-    background: #252422;
+    background: url('https://i.pinimg.com/originals/65/3f/29/653f2901d73984f72dd055f42b495ffa.jpg') no-repeat center center;
     color: white;
     padding: 20px;
     box-sizing: border-box;
@@ -162,22 +162,18 @@ header {
 
 .grid-1 {
     grid-column: span 5;
-    background: #f4a261;
+    background: url('https://www.vandelaydesign.com/wp-content/uploads/27-4.jpg') no-repeat center center;
+    background-size: cover;
     color: white;
     padding: 20px;
     box-sizing: border-box;
     text-align: center;
 }
 
-.grid-1 h2 {
-    font-size: 17px;
-    text-align: center;
-    color: #252422;
-}
-
 .grid-2 {
     grid-column: span 7;
-    background: #e76f51;
+    background: url('https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?cs=srgb&dl=pexels-pixabay-531880.jpg&fm=jpg') no-repeat center center;
+    background-size: cover;
     color: white;
     padding: 20px;
     box-sizing: border-box;
@@ -185,7 +181,8 @@ header {
 
 .grid-3 {
     grid-column: span 4;
-    background: #2a9d8f;
+    background: url('https://img.freepik.com/free-photo/closeup-shot-wet-glass-reflecting-rainy-forest-scenery_181624-23365.jpg') no-repeat center center;
+    background-size: cover;
     color: white;
     padding: 20px;
     box-sizing: border-box;
@@ -193,11 +190,13 @@ header {
 
 .grid-4 {
     grid-column: span 8;
-    background: #264653;
+    background: url('https://static.vecteezy.com/system/resources/thumbnails/038/946/415/small_2x/ai-generated-rain-flows-down-from-a-roof-down-photo.jpg') no-repeat center center;
+    background-size: cover;
     color: white;
     padding: 20px;
     box-sizing: border-box;
     text-align: center;
+    font-weight: bold;
 }
 
 .fade-in-text {
@@ -210,7 +209,7 @@ mark {
     -webkit-animation: 1.5s highlight 1.5s 1 normal forwards;
     animation: 1.5s highlight 1.5s 1 normal forwards;
     background-color: none;
-    background: linear-gradient(90deg, #252422 50%, #f4a261 50%);
+    background: linear-gradient(90deg, #252422 50%, #fefefe 50%);
     color: #fefefe;
     background-size: 200% 100%;
     background-position: 100% 0;
@@ -230,6 +229,7 @@ mark {
 }
 
 .grid-item {
+    position: relative;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -240,12 +240,16 @@ mark {
     align-items: center;
     justify-content: center;
     text-align: center;
+    overflow: hidden; /* Ensure content does not overflow */
 }
 
 .grid-item img {
     max-width: 100%;
+    max-height: 100%;
+    width: auto;
     height: auto;
     border-radius: 5px;
+    object-fit: cover; /* Ensures the image covers the grid item */
 }
 
 .item-1 {
